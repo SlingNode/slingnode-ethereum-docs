@@ -14,6 +14,12 @@ The project uses Docker Compose to deploy and manage the lifecycle of the client
 
 slingnode.ethereum can be used by anyone from a solo-staker running a single node to a DevOps Team deploying and managing hundreds of servers. Check out example Playbooks to see how this can be implemented using slingnode.ethereum.
 
+## Repositories
+
+The role is available from Ansible Galaxy: [https://galaxy.ansible.com/slingnode/ethereum](https://galaxy.ansible.com/slingnode/ethereum)
+
+The source code is on Github: [https://github.com/SlingNode/slingnode-ansible-ethereum](https://github.com/SlingNode/slingnode-ansible-ethereum)
+
 ## Project's principles
 
 * use unmodified official docker images
