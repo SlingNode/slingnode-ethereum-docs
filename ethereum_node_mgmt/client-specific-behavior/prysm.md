@@ -1,6 +1,6 @@
 # Prysm
 
-Prysm validator client's data dir structure before imports.
+Prysm validator client's data directory structure before imports.
 
 ```
 .
@@ -11,7 +11,7 @@ Prysm validator client's data dir structure before imports.
 
 ## Import validator keys
 
-Command based key import will create Prysm wallet with password specified in the --wallet-password-file flag. The role will copy the wallet password file specifeid using prysm\_wallet\_password variable from the control host to the server.&#x20;
+Command based key import will create Prysm wallet with password specified in the --wallet-password-file flag. The role will copy the wallet password file specified using prysm\_wallet\_password variable from the control host to the server.&#x20;
 
 ```yaml
 prysm_wallet_password:
@@ -19,11 +19,11 @@ prysm_wallet_password:
       dest: "{{ blockchain_root_path }}/validator/prysm/{{ prysm_wallet_file_name }}"
 ```
 
-All keystores located in the import dir (--keys-dir) will be imported. They all must use the same password (--account-password-file).&#x20;
+All keystores located in the import directory (--keys-dir) will be imported. They all must use the same password (--account-password-file).&#x20;
 
 Relevant flags:
 
-```django
+```
 - --keys-dir={{ container_keystore_dir }}
 - --wallet-dir={{ prysm_wallet_dir }}
 - --wallet-password-file={{ prysm_wallet_password_file }}
@@ -41,7 +41,7 @@ Importing accounts... 100% [==========================================]  [0s:0s]
 Successfully imported 2 accounts, view all of them by running `accounts list`
 ```
 
-### Data dir structure after keys import
+### Data directory structure after keys import
 
 ```
 .
@@ -75,4 +75,3 @@ Importing attesting history for validator public keys 100% [==========]  [0s:0s]
 {"level":"info","msg":"Writing slashing protection export JSON file to /slashing_protection_db/slashing_protection.json","prefix":"historycmd","time":"2023-03-30T08:57:44Z"}
 {"level":"info","msg":"Successfully wrote /slashing_protection_db/slashing_protection.json. You can import this file using Prysm's validator slashing-protection-history import command in another machine","prefix":"historycmd","time":"2023-03-30T08:57:44Z"}
 ```
-

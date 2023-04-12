@@ -1,6 +1,6 @@
 # Role variables
 
-The varible naming and layout is the as in the slingnode.ethereum. This is a deliverate deesing choice which enables seamless integration of both roles and full node deployment in a single Playbook.&#x20;
+The variable naming and layout is the same as in the slingnode.ethereum role. This is a deliberate design choice which enables seamless integration of both roles and full node deployment in a single Playbook.&#x20;
 
 Role variables are defined in 'defaults'. This means they have the lowest precedence and can be easily overridden. See [Ansible documentation](https://docs.ansible.com/ansible/latest/playbook\_guide/playbooks\_variables.html#understanding-variable-precedence) for details on the precedence.
 
@@ -52,7 +52,7 @@ import_slashing_protection_db: true
 
 ### keystore\_files
 
-Variable required for CMD based key import tasks. It specifies local source of the kyestore and password files to copy to the server. &#x20;
+Variable required for command line based key import tasks. It specifies local source of the keystore and password files to copy to the server. &#x20;
 
 ```yaml
 keystore_files:

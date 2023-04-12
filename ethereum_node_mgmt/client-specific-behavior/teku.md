@@ -1,6 +1,6 @@
 # Teku
 
-Teku validator client's data dir structure before imports.
+Teku validator client's data directory structure before imports.
 
 ```
 .
@@ -17,7 +17,7 @@ Teku validator client's data dir structure before imports.
 
 ## Import validator keys
 
-Teku doesn't have import command. The client will read and import keystores from directory specified using --validator-keys flag passed to the Validator client. By default Nimbus deployed using slingnode.ethereum will point to the same directory for keys and the keystore password.&#x20;
+Teku doesn't have import command therefore it doesn't use a container. The client will read and import keystores from directory specified using --validator-keys flag passed to the Validator client. By default Nimbus deployed using slingnode.ethereum will point to the same directory for keys and the keystore password.&#x20;
 
 ```
 - --validator-keys={{ teku_validator_keys }}
@@ -33,22 +33,9 @@ _Directory or file to load the encrypted keystore file(s) and associated passwor
 Managing validator keys
 {% endembed %}
 
-### Data dir structure after keys import
+### Data directory structure after keys import
 
 There's no changes to the file layout.&#x20;
-
-```
-.
-├── validator
-│   └── key-manager
-│       ├── local
-│       ├── local-passwords
-│       └── validator-api-bearer
-├── validator_api_key.crt
-├── validator_api_key.key
-├── validator_api_key.keystore
-└── validator_api_key.password
-```
 
 ## Slashing protection db import
 

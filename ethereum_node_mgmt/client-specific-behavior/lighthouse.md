@@ -2,7 +2,7 @@
 
 ## Overview
 
-Lighthouse validator client's data dir structure before imports.
+Lighthouse validator client's data directory structure before imports.
 
 ```
 .
@@ -15,7 +15,7 @@ Lighthouse validator client's data dir structure before imports.
 
 ## Import validator keys
 
-During interactive import Lighthouse will prompt for keystore password. --password-file speciifes a text file containing the password Lighthouse will use to decrypt the keystores. It will import all keystores present in the import directory (--directory). All keystores must use the same password. Using  --reuse-password flag tell Lighthouse to save the password for future reuse otherwise the password would have to be specified interactively evertime the client restarts.  The password is saved in palin text on the validator server.
+During import Lighthouse required keystore password to be provided using --password-file flag. It will import all keystores present in the import directory (--directory). All keystores must use the same password (if you have multiple keystores using different passwords you will need to execute the role for each password). Using  --reuse-password flag tell Lighthouse to save the password for future reuse otherwise the password would have to be specified interactively every time the client restarts.  The password is saved in plain text on the validator server.
 
 Relevant flags:
 
@@ -60,7 +60,7 @@ Successfully imported 2 validators (0 skipped).
 WARNING: DO NOT USE THE ORIGINAL KEYSTORES TO VALIDATE WITH ANOTHER CLIENT, OR YOU WILL GET SLASHED.
 ```
 
-### Data dir structure after keys import
+### Data directory structure after keys import
 
 ```
 .

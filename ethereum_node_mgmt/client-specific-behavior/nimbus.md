@@ -1,6 +1,6 @@
 # Nimbus
 
-Nimbus validator client's data dir structure before imports.
+Nimbus validator client's data directory structure before imports.
 
 ```
 .
@@ -9,11 +9,11 @@ Nimbus validator client's data dir structure before imports.
 
 ## Import validator keys
 
-Automated command line import is not supported by the role for Nimbus. The client requires the keystore password to be entered interactively during the import which is not easy not using emphemeral containers. For Nimbus only API based key import is supported.&#x20;
+Automated command line import is not supported by the role for Nimbus. The client requires the keystore password to be entered interactively during the import which is does not work well with ephemeral containers. For Nimbus only API based key import is supported.&#x20;
 
 ### Interactive import
 
-It is possibe to import the keys by accessing the server directly and starting the container with the following volumes.&#x20;
+It is possible to import the keys by accessing the server directly and starting the container with the following volumes.&#x20;
 
 ```sh
 docker run -it --rm --entrypoint /bin/bash -v /opt/blockchain/validator/nimbus:/var/lib/nimbus:rw -v /opt/blockchain/validator/keystore:/keystore:ro -u 39284:39284 statusim/nimbus-eth2:amd64-v23.3.2 
