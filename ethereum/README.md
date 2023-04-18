@@ -28,9 +28,13 @@ The source code is on Github: [https://github.com/SlingNode/slingnode-ansible-et
 * keep it simple
 * DRY
 
+## Contact
+
+If you have any questions join our [Discord server ](https://discord.gg/EPg7yfhmUU)or log a GitHub issue.&#x20;
+
 ## Acknowledgments&#x20;
 
-* We have refered to the amazing Eth-Docker project - [https://github.com/eth-educators/eth-docker](https://github.com/eth-educators/eth-docker)
+* We have referred to the amazing Eth-Docker project - [https://github.com/eth-educators/eth-docker](https://github.com/eth-educators/eth-docker)
 * Throughout the development we have used Discord to seek help and explanations from various Ethereum projects
 
 We'd like to thank the Eth-Docker maintainers as well as the individuals that have helped us in Discord.&#x20;
