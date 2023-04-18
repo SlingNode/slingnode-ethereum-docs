@@ -40,3 +40,7 @@ Ansible Docker module is required on the Ansible controller. It can be installed
 ```sh
 ansible-galaxy collection install community.docker:==3.4.0
 ```
+
+## Contact
+
+If you have any questions join our [Discord server](https://discord.gg/EPg7yfhmUU) or log a GitHub issue.
