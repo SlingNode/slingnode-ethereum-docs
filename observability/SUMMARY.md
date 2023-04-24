@@ -1,3 +1,5 @@
 # Table of contents
 
-* [Page 1](README.md)
+* [Overview](README.md)
+* [Using the role](using-the-role.md)
+* [Architecture](architecture.md)
