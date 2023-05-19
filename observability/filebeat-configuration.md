@@ -32,20 +32,32 @@ The following volumes are mapped to the container:
 
 ```yaml
 volumes:
-    - {{ observability_root_path }}/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
-    - {{ observability_root_path }}/filebeat/:/registry:rw
-    - {{ observability_root_path }}/filebeat/data:/usr/share/filebeat/data:rw
-    - /var/run/docker.sock:/var/run/docker.sock:ro
-    - /var/lib/docker/containers:/var/lib/docker/containers:ro
+   - {{ observability_root_path }}/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+   - filebeat-data:/usr/share/filebeat/data:rw
+   - /var/run/docker.sock:/var/run/docker.sock:ro
+   - /var/lib/docker/containers:/var/lib/docker/containers:ro
 ```
 
 From top to bottom they are:&#x20;
 
 1. Filebeat config file
-2. Registry&#x20;
-3. Working dir
-4. Socket file required to enable Filebeat Autodiscovery
-5. Docker logs location on the host&#x20;
+2. Working dir and registry
+3. Socket file required to enable Filebeat Autodiscovery
+4. Docker logs location on the host&#x20;
+
+### Data persistence
+
+Filebeat container uses a named volume (refer to the section above) to persist the registry data. The registry is what Filebeat uses to know where it finished harvesting the log files. Without persistent registry Filebeat would forward all logs every time the container got recreated.&#x20;
+
+#### Deleting data
+
+If you want to forward all logs present on the server (for example if you started from scratch with the ELK container) you will need to execute the following commands on the server:
+
+```
+docker kill filebeat 
+docker container rm filebeat 
+docker volume rm agents_filebeat-data
+```
 
 ## Configuration
 
@@ -72,12 +84,3 @@ output.logstash:
   enabled: true
   timeout: 15
 ```
-
-
-
-
-
-
-
-
-

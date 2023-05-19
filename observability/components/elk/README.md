@@ -9,7 +9,7 @@ ElasticSearch, Logstash, Kibana (ELK) stack is deployed as a single container us
 
 ## Kibana data view
 
-By default there are no data views configured in Kibana. This means that the logs will not be visible. Refer to Creating Kibana Data View for steps to create one.&#x20;
+By default there are no data views configured in Kibana. This means that the logs will not be visible. Refer to [Creating Kibana Data View](creating-kibana-data-view.md) for steps to create one.&#x20;
 
 Note: the data view can be created only if the ElasticSerch index exists.
 

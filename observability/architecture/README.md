@@ -55,6 +55,13 @@ volumes:
   prom-data:
 ```
 
+Filebeat is the only "monitoring agent" container that persists data. The following volume is defined in the compose file:
+
+```yaml
+volumes:
+  filebeat-data:
+```
+
 The remaining containers do not persist any data.&#x20;
 
 ### Starting the Docker compose project
