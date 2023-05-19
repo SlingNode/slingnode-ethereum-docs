@@ -90,5 +90,5 @@ ElasticSearch and Kibana configuration is default. Currently the role does not e
 
 ### Log forwarding
 
-Logs get forwarded to ELK using Filebeat. Refer to the [Filebeat section](../../filebeat-configuration.md) for details.&#x20;
+The role uses Filebeat as log forwarder. Filebeat is configured to autodiscover containers based on container labels and selectively forward logs. Refer to the [Filebeat section](../../filebeat-configuration.md) for details.&#x20;
 
