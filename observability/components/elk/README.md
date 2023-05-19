@@ -15,6 +15,14 @@ Note: the data view can be created only if the ElasticSerch index exists.
 
 ## Container
 
+If you want to use different version of container you can modify the following variable:
+
+```yaml
+elk_docker_image: sebp/elk:8.6.2
+```
+
+### Memory limit
+
 Due to how ElasticSearch manages memory, the container will consume all available RAM. By default the role limits the container memory to 6GB. The required minimum is 4GB.&#x20;
 
 The value can be customized using the following variable:
@@ -80,7 +88,7 @@ logstash_parsers_config:
 
 ElasticSearch and Kibana configuration is default. Currently the role does not expose option to customize it. Please log a Github issue if that's something you'd like.&#x20;
 
+### Log forwarding
 
-
-
+Logs get forwarded to ELK using Filebeat. Refer to the [Filebeat section](../../filebeat-configuration.md) for details.&#x20;
 

@@ -9,5 +9,6 @@
   * [Security](architecture/security.md)
 * [Log parsing](log-parsing.md)
 * [Components](components/README.md)
-  * [ELK](components/elk.md)
-  * [Filebeat](components/filebeat.md)
+  * [ELK](components/elk/README.md)
+    * [Creating Kibana Data View](components/elk/creating-kibana-data-view.md)
+  * [Filebeat](filebeat-configuration.md)
