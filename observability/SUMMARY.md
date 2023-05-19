@@ -8,4 +8,6 @@
 * [Architecture](architecture/README.md)
   * [Security](architecture/security.md)
 * [Log parsing](log-parsing.md)
-* [Filebeat configuration](filebeat-configuration.md)
+* [Components](components/README.md)
+  * [ELK](components/elk.md)
+  * [Filebeat](components/filebeat.md)
