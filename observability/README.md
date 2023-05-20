@@ -20,19 +20,27 @@ The stack is comprised of:&#x20;
 * Ethereum-Metrics-Exporter
 * Container Advisor
 
+## Accessing the web UIs&#x20;
+
+Grafana and Kibana web UIs are by default mapped to the localhost interface of the Docker host. It expected that role users will deploy a reverse proxy (such as NGINX) with TLS or SSH tunnels in order access the web UIs. &#x20;
+
+## Viewing logs in Kibana
+
+In order to view the logs you will need to create a data source first. Follow [this steps ](components/elk/creating-kibana-data-view.md)this stepsto create one.&#x20;
+
 ## Deployment types
 
 SlingNode Observability Stack (SOS) can be deployed on a single server along with Ethereum clients or it can be used in a distributed deployment.&#x20;
 
 ### Single server deployment
 
-In a single server deployment which is the default type, all components ([monitoring server](architecture/#monitoring-server) and [monitoring agents](architecture/#monitoring-agents)) are deployed to the same server as the Ethereum clients. In this deployment type, the services communicate over Docker Network. It is the same network that the monitored clients are connected to (refer to [Docker network section ](architecture/)in slingnode.ethereum documentation for details).&#x20;
+In a single server deployment which is the default type, all components ([monitoring server](architecture.md#monitoring-server) and [monitoring agents](architecture.md#monitoring-agents)) are deployed to the same server as the Ethereum clients. In this deployment type, the services communicate over Docker Network. It is the same network that the monitored clients are connected to (refer to [Docker network section ](architecture.md)in slingnode.ethereum documentation for details).&#x20;
 
 <figure><img src=".gitbook/assets/slingnode-ethereum-observabiliyt-single.png" alt=""><figcaption><p>Single server deployment</p></figcaption></figure>
 
 ### Distributed deployment
 
-In a distributed, the [monitoring server](architecture/#monitoring-server) is deployed to a dedicated node and configured to monitor Ethereum Clients running on remote servers. In this type of deployment, the monitoring agents (Filebeat, node-exporter, ethereum-metrics-exporter,  cadvisor) are deployed to the servers running the Ethereum clients. The monitoring server and agent are configured to communicate  over the network.&#x20;
+In a distributed, the [monitoring server](architecture.md#monitoring-server) is deployed to a dedicated node and configured to monitor Ethereum Clients running on remote servers. In this type of deployment, the monitoring agents (Filebeat, node-exporter, ethereum-metrics-exporter,  cadvisor) are deployed to the servers running the Ethereum clients. The monitoring server and agent are configured to communicate  over the network.&#x20;
 
 <figure><img src=".gitbook/assets/slingnode-ethereum-observabiliyt-distributed.png" alt=""><figcaption><p>Distributed deployment</p></figcaption></figure>
 

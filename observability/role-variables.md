@@ -13,7 +13,7 @@ Role variables are defined in 'defaults'. This means they have the lowest preced
 
 This section outlines variables that you will most likely want to modify.
 
-Role behavior is dictated by the following variables. They allow you to specify what components of the stack get deployed. Refer to the [Architecture](architecture/) section for details.&#x20;
+Role behavior is dictated by the following variables. They allow you to specify what components of the stack get deployed. Refer to the [Architecture](architecture.md) section for details.&#x20;
 
 ```yaml
 monitoring_server: true            # deploys ELK, Grafana, Prometheus

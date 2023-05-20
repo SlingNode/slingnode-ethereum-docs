@@ -98,7 +98,7 @@ observability_root_path: /opt/observability
 
 ## Connectivity between monitoring server and endpoints
 
-As outlined in the [Docker network ](./#docker-network)section, in single server deployments all network communication happens over Docker network. By its nature, in a distributed deployment where monitoring server is installed in a separate server than the endpoints it monitors the communication occurs over the network.&#x20;
+As outlined in the [Docker network ](architecture.md#docker-network)section, in single server deployments all network communication happens over Docker network. By its nature, in a distributed deployment where monitoring server is installed in a separate server than the endpoints it monitors the communication occurs over the network.&#x20;
 
 A high level traffic flow looks as follows:&#x20;
 
