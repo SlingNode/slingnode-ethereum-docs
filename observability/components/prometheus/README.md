@@ -18,18 +18,16 @@ prometheus_docker_image: prom/prometheus:v2.44.0
 
 Prometheus container uses named volume to persist the data. The container can be safely deleted and recreated without the loss of data.
 
-```
+```yaml
     volumes:
        - prom-data:/prometheus
 ```
-
-####
 
 #### Deleting data
 
 To delete the data and start from scratch you will need to execute the following command on the server:
 
-```
+```bash
 docker kill prometheus 
 docker container rm prometheus 
 docker volume rm observability_dc_prom-data
