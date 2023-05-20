@@ -14,3 +14,4 @@
   * [ELK](components/elk/README.md)
     * [Creating Kibana Data View](components/elk/creating-kibana-data-view.md)
   * [Filebeat](filebeat-configuration.md)
+* [Testing](testing.md)
