@@ -5,6 +5,7 @@
 Prometheus is deployed using the official image:
 
 * Image source: [https://hub.docker.com/r/prom/prometheus](https://hub.docker.com/r/prom/prometheus)
+* Documentation: [https://prometheus.io/docs/prometheus/latest/installation/#using-docker](https://prometheus.io/docs/prometheus/latest/installation/#using-docker)
 
 ## Container
 
@@ -39,7 +40,7 @@ How Prometheus is configured is dictated by the deployment type. In a single ser
 
 ### Single server deployment
 
-In a single server deployment, Prometheus uses a "static" configuration defined in prometheus.yml file. The config file always contains scrape targets for all agents (node-exporter, cAdvisor, ethereum-metrics-exporter). The targets for Ethereum clients are generated dynamically based on the types of clients that are deployed.&#x20;
+In a single server deployment, Prometheus uses a "static" configuration defined in prometheus.yml file. The config file always contains scrape targets for all agents (node-exporter, cAdvisor, ethereum-metrics-exporter). The targets for Ethereum clients are generated dynamically based on the types of clients that are deployed (as specified by the "clients" variable).
 
 You can customize Prometheus by providing your own configuration file.&#x20;
 
@@ -53,7 +54,7 @@ prometheus_config_template: templates/prometheus/prometheus.yml.j2
 In a distributed deployment,  [file based Service Discovery](https://prometheus.io/docs/guides/file-sd/) feature of Prometheus is used. In summary the file based Service Discover (SD) allows for listing scrape target hosts in text files. Prometheus periodically reads those files and starts scraping new hosts. There are two SD file templates included in the role:&#x20;
 
 * sd\_all\_targets.yml - includes all agent targets (node-exporter, cAdvisor, ethereum-metrics-exporter), all hosts run the agents&#x20;
-* sd\_client\_targets.yml - includes Ethereum client targets with config depenend on the type of the client
+* sd\_client\_targets.yml - includes Ethereum client targets with config dependent on the type of the client
 
 Both files will be automatically populated based on the group\_vars or host\_vars. &#x20;
 

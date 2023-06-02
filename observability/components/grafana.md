@@ -5,6 +5,7 @@
 Grafana is deployed using the official image:
 
 * Image source: [https://hub.docker.com/r/grafana/grafana](https://hub.docker.com/r/grafana/grafana)
+* Documentation: [https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/](https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/)
 
 ## Container
 
@@ -16,7 +17,7 @@ grafana_docker_image: grafana/grafana:9.5.1
 
 #### Data persistence
 
-Prometheus container uses named volume to persist the data. The container can be safely deleted and recreated without the loss of data.
+Grafana container uses named volume to persist the data. The container can be safely deleted and recreated without the loss of data.
 
 ```yaml
     volumes:
@@ -59,3 +60,9 @@ The dashboard directory is shown below.&#x20;
 ### Dashboards
 
 The easiest way to add dashboards is to import them from Grafana Gallery. You will have option to edit source name during the import. If you want to deploy dashboards as files you will need to copy them to the directory specified above. &#x20;
+
+At a minimum you'll like want to use the following dashboards:
+
+* [https://grafana.com/grafana/dashboards/16277-ethereum-metrics-exporter-single/?plcmt=footer](https://grafana.com/grafana/dashboards/16277-ethereum-metrics-exporter-single/?plcmt=footer)
+* [https://grafana.com/grafana/dashboards/1860-node-exporter-full/](https://grafana.com/grafana/dashboards/1860-node-exporter-full/)
+

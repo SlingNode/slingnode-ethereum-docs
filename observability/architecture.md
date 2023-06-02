@@ -96,13 +96,13 @@ The location can be modified by overriding the following variable:
 observability_root_path: /opt/observability
 ```
 
-## Connectivity between monitoring server and endpoints
+## Connectivity between monitoring server and monitoring agents/client targets
 
-As outlined in the [Docker network ](architecture.md#docker-network)section, in single server deployments all network communication happens over Docker network. By its nature, in a distributed deployment where monitoring server is installed in a separate server than the endpoints it monitors the communication occurs over the network.&#x20;
+As outlined in the [Docker network ](architecture.md#docker-network)section, in single server deployments all network communication happens over Docker network. By its nature, in a distributed deployment where monitoring server is installed on a separate server than the endpoints it monitors the communication occurs over the network.&#x20;
 
 A high level traffic flow looks as follows:&#x20;
 
-* Prometheus (monitoring server) -> endpoints (scrape targets)
+* Prometheus (monitoring server) -> scrape targets (agents, clients)
 * Filebeat (endpoint/monitoring agent) -> ELK (monitoring server)
 
 ### Exposing ports
@@ -128,7 +128,7 @@ Note: metrics exporters do not need to be mapped to the localhost since in a sin
 
 <mark style="color:red;">**Configuration outlined in this section is suitable only if you run your servers on a private network behind a network firewall (or security groups), otherwise sensitive APIs and metrics will be exposed to the Internet even if your server has FirewallD or UFW enabled due to how Docker modifies IPTables. Refer to**</mark> [<mark style="color:blue;">**Docker & host firewall**</mark> ](https://docs.slingnode.com/slingnode.ethereum/architecture/docker-and-host-firewall)<mark style="color:red;">**section for details.**</mark>
 
-To expose ports to the host and make them accessible from remote hosts you can override the following variable:
+To make the ports accessible from remote hosts you can override the following variable:
 
 ```yaml
 host_ip_address_to_bind_to: 0.0.0.0
