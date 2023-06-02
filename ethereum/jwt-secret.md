@@ -52,8 +52,6 @@ jwt_secret_string: "7a813d06b0a08de1f1e70ebbc6b3ec8dc589f62d04d346b4754c9d739b4c
 
 Refer to [Generating JWT token](jwt-secret.md#generating-jwt-token) section.
 
-Note that if you are deploying multiple server pairs, all of them will use the same shared secret. This might not be desired based on your security policy.&#x20;
-
 ### Generating JWT token
 
 The following command can be used to generate a JWT token.&#x20;

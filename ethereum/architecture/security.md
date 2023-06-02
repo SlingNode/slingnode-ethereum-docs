@@ -24,7 +24,7 @@ slingnode.ethereum comes with secure defaults for configuration within its scope
 
 ## Host Firewall
 
-Be default host firewall will be installed and enabled for both RedHat and Debian based operating systems.  The role will configure firewall rules for the client that is being deployed.&#x20;
+By default host firewall will be installed and enabled for both RedHat and Debian based operating systems.  The role will configure firewall rules for the client that is being deployed.&#x20;
 
 SSH will be explicitly allowed from any sources. This is to prevent situation where you get locked out of your server. &#x20;
 

@@ -40,7 +40,7 @@ If you are switching back to a client that you used before and you did not delet
 
 ### Consensus
 
-The consensus client will need to sync. Consensus clients support checkpoint sync which lets them be up and running in minutes, therefoe the downtime icurred should be minimal. Checkpoint sync is enabled by default when deploying clients using slingnode.ethereum role, refer to [Checkpoint sync](checkpoint-sync.md) page for details.&#x20;
+The consensus client will need to sync. Consensus clients support checkpoint sync which lets them be up and running in minutes, therefore the downtime incurred should be minimal. Checkpoint sync is enabled by default when deploying clients using slingnode.ethereum role, refer to [Checkpoint sync](checkpoint-sync.md) page for details.&#x20;
 
 #### Switching back to the previous consensus client
 

@@ -19,14 +19,9 @@ consensus_checkpoint_sync_url: https://sync-goerli.beaconcha.in
 
 ## Client support
 
-Technically, all clients support checkpoint sync however when using slingnode.ethereum with Nimbus this is feature is not currently available. This is due to the way Nimbus implements the checkpoint sync (it requires starting and restarting the client with different flags which is cumbersome to implement cleanly in Docker). The table below shows support matrix and links to the client specific documentation for reference.
+Technically, all clients support checkpoint sync however when using slingnode.ethereum with Nimbus this is feature is not currently available. This is due to the way Nimbus implements the checkpoint sync (it requires starting and restarting the client with different flags which is cumbersome to implement cleanly in Docker and Ansible). The table below shows support matrix and links to the client specific documentation for reference.
 
-| Client     | Available using the role | Official docs                                                                                                                              |
-| ---------- | :----------------------: | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Lighthouse |            yes           | [https://lighthouse-book.sigmaprime.io/checkpoint-sync.html](https://lighthouse-book.sigmaprime.io/checkpoint-sync.html)                   |
-| Prysm      |            yes           | [https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync)             |
-| Teku       |            yes           | [https://docs.teku.consensys.net/HowTo/Get-Started/Checkpoint-Start/](https://docs.teku.consensys.net/HowTo/Get-Started/Checkpoint-Start/) |
-| Nimbus     |            no            | [https://nimbus.guide/trusted-node-sync.html](https://nimbus.guide/trusted-node-sync.html)                                                 |
+<table><thead><tr><th width="153.33333333333331">Client</th><th width="227" align="center">Available using the role</th><th>Official docs</th></tr></thead><tbody><tr><td>Lighthouse</td><td align="center">yes</td><td><a href="https://lighthouse-book.sigmaprime.io/checkpoint-sync.html">https://lighthouse-book.sigmaprime.io/checkpoint-sync.html</a></td></tr><tr><td>Prysm</td><td align="center">yes</td><td><a href="https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync">https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync</a></td></tr><tr><td>Teku</td><td align="center">yes</td><td><a href="https://docs.teku.consensys.net/HowTo/Get-Started/Checkpoint-Start/">https://docs.teku.consensys.net/HowTo/Get-Started/Checkpoint-Start/</a></td></tr><tr><td>Nimbus</td><td align="center">no</td><td><a href="https://nimbus.guide/trusted-node-sync.html">https://nimbus.guide/trusted-node-sync.html</a></td></tr></tbody></table>
 
 ## Public endpoint availability
 

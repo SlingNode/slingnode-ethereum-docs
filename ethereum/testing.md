@@ -8,24 +8,17 @@ This page is meant to provide overview of the included test scenarios and how to
 
 The table below outlines the summary of the test scenarios included with the role. The "purpose" column is only a high-level description, there are a lot of role variable combinations tested in each scenario. &#x20;
 
-| Scenario name             | Driver/provider | Purpose                                  |
-| ------------------------- | --------------- | ---------------------------------------- |
-| default                   | Vagrant/Libvirt | Test defaults against all supported OSes |
-| default\_single\_instance | Vagrant/Libvirt | Test defaults against ad-hoc OS          |
-| expose\_ports             | Vagrant/Libvirt | Test mapping ports to the host           |
-| jwt                       | Vagrant/Libvirt | Test predefined JWT                      |
-| multi\_tier               | Vagrant/Libvirt | Test distributed deployment              |
-| default\_docker           | Docker          | Test defaults against d-hoc OS in Docker |
+<table><thead><tr><th width="236.33333333333331">Scenario name</th><th width="157">Driver/provider</th><th>Purpose</th></tr></thead><tbody><tr><td>default</td><td>Vagrant/Libvirt</td><td>Test defaults against all supported OSes</td></tr><tr><td>default_single_instance</td><td>Vagrant/Libvirt</td><td>Test defaults against ad-hoc OS</td></tr><tr><td>expose_ports</td><td>Vagrant/Libvirt</td><td>Test mapping ports to the host</td></tr><tr><td>jwt</td><td>Vagrant/Libvirt</td><td>Test predefined JWT </td></tr><tr><td>multi_tier</td><td>Vagrant/Libvirt</td><td>Test distributed deployment </td></tr><tr><td>default_docker</td><td>Docker</td><td>Test defaults against d-hoc OS in Docker</td></tr></tbody></table>
 
 ## Molecule drivers
 
 Molecule supports various "drivers" to create and manage instances during test lifecycle. The easiest one to use (and the default for Molecule) is Docker. The only requirement for using Docker driver is a running Docker daemon. Sadly, this does not work well for slingnode.ethereum role. The role uses Docker to manage client lifecycle which means that the tests have to run Docker containers in Docker containers (DIND). While this works, it requires specially prepared Docker images which are not readily available.&#x20;
 
-slingnode.ethereum test scenarios use Vagrant as the "Molecule driver" and Libvirt/KVM as the "Vgrant provider". This enables the tests to run in full unmodified VMs with widely available OS images for all supported platforms. The downside is that the Vagrant / Libvirt set up is more involved and not as readily available in CI systems as Docker. For this reason a single Docker based Molecule scenario is shipped with the role - "default\_docker".&#x20;
+slingnode.ethereum test scenarios use Vagrant as the "Molecule driver" and Libvirt/KVM as the "Vagrant provider". This enables the tests to run in full unmodified VMs with widely available OS images for all supported platforms. The downside is that the Vagrant / Libvirt set up is more involved and not as readily available in CI systems as Docker. For this reason a single Docker based Molecule scenario is shipped with the role - "default\_docker".&#x20;
 
 ### default\_docker scenario
 
-This scenario uses rockylinux8 **** image. Rocky8 is the only docker image we identified that was not causing issues.
+This scenario uses rockylinux8 image. Rocky8 is the only docker image we identified that was not causing issues.
 
 ### Set up
 

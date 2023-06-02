@@ -8,12 +8,7 @@ The API requests are authenticated using a bearer token. All clients except Nimb
 
 The table below shows summary of the relevant client features:&#x20;
 
-| Client     | Protocol | Auto-generated token | ETH2 Key manager API |
-| ---------- | :------: | :------------------: | :------------------: |
-| Lighthouse |   HTTP   |          yes         |          yes         |
-| Prysm      |   HTTP   |          yes         |          yes         |
-| Teku       |   HTTPS  |          yes         |          yes         |
-| Nimbus     |   HTTP   |          no          |          yes         |
+<table><thead><tr><th width="147">Client</th><th width="150" align="center">Protocol</th><th width="225" align="center">Auto-generated token</th><th align="center">ETH2 Key manager API</th></tr></thead><tbody><tr><td>Lighthouse</td><td align="center">HTTP</td><td align="center">yes</td><td align="center">yes</td></tr><tr><td>Prysm</td><td align="center">HTTP</td><td align="center">yes</td><td align="center">yes</td></tr><tr><td>Teku</td><td align="center">HTTPS</td><td align="center">yes</td><td align="center">yes</td></tr><tr><td>Nimbus</td><td align="center">HTTP</td><td align="center">no</td><td align="center">yes</td></tr></tbody></table>
 
 Since the APIs are served over plain text HTTP protocol (except Teku) it is recommended to use either a reverse proxy (such as Nginx) with TLS or SSH tunneling to enable access from remote hosts. Refer to [Exposing the validator API port to host](enabling-validator-client-api.md#exposing-the-validator-api-port-to-host) for details.&#x20;
 
@@ -77,12 +72,7 @@ validator_api_port: 7500
 
 All clients except Nimbus auto-generate the token and save it in a client specific location. The table below summarizes the Docker host location of the token for each client:
 
-| Client     | Token location on Docker host                                                            |
-| ---------- | ---------------------------------------------------------------------------------------- |
-| Lighthouse | \{{ blockchain\_root\_path \}}/validator/lighthouse/validators/api-token.txt             |
-| Prysm      | \{{ blockchain\_root\_path \}}/validator/prysm/auth-token                                |
-| Teku       | \{{ blockchain\_root\_path \}}/validator/teku/validator/key-manager/validator-api-bearer |
-| Nimbus     | \{{ blockchain\_root\_path \}}/validator/nimbus/api-token.txt                            |
+<table><thead><tr><th width="151">Client</th><th>Token location on Docker host</th></tr></thead><tbody><tr><td>Lighthouse</td><td>{{ blockchain_root_path }}/validator/lighthouse/validators/api-token.txt</td></tr><tr><td>Prysm</td><td>{{ blockchain_root_path }}/validator/prysm/auth-token</td></tr><tr><td>Teku</td><td>{{ blockchain_root_path }}/validator/teku/validator/key-manager/validator-api-bearer</td></tr><tr><td>Nimbus</td><td>{{ blockchain_root_path }}/validator/nimbus/api-token.txt</td></tr></tbody></table>
 
 ### Nimbus bearer token
 

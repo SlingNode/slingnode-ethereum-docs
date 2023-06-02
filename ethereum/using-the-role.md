@@ -1,6 +1,6 @@
 # Using the role
 
-The best place to start is to check the examples project. There are multiple example playbooks  ranging from a simple single node deployment to a distributed deployment of large number of nodes. The examples project includes sample playbooks, inventories and group vars that you can adapt to your needs. The examples project is available here [https://github.com/SlingNode/slingnode-ethereum-examples](https://github.com/SlingNode/slingnode-ethereum-examples)
+The best place to start is to check the examples project. There are multiple example playbooks  ranging from a simple single server deployment to a distributed deployment of large number of nodes. The examples project includes sample playbooks, inventories and group vars that you can adapt to your needs. The examples project is available here [https://github.com/SlingNode/slingnode-ethereum-examples](https://github.com/SlingNode/slingnode-ethereum-examples)
 
 Each of the examples includes:
 
@@ -20,7 +20,7 @@ cd slingnode-ethereum-examples/slingnode.ethereum
 ansible-galaxy install -r requirements.yml
 ```
 
-## Single tier deployments
+## Single server deployments
 
 This section outlines how to deploy all three layers or any combination of them on the same server.  In these scenarios execution / consensus / validator run on the same server and communicate over the internal Docker network.&#x20;
 
@@ -112,7 +112,7 @@ cd slingnode-ethereum-examples/slingnode.ethereum/execution-and-consensus-only
 ansible-playbook deploy-execution-and-consensus-only-specify-clients.yml -i inventory.ini --private-key ~/.ssh/ubuntu.privatekey  --user ubuntu
 ```
 
-## Multi tier deployments
+## Distributed deployments
 
 This section outlines how to mange split deployments where execution / consensus / validator  run on separate servers or for example execution and consensus run on the same server and validator (or multiple validators) run on separate servers.&#x20;
 
@@ -135,7 +135,7 @@ A high-level end state is:
 
 ### Each layer on a separate server (same clients)
 
-In this example we deploy each layer on a separate server. The same clients will be deployed to all servers included in the play.  The inventory is structured so that we can user group\_vars to achieve the desired state.&#x20;
+In this example we deploy each layer on a separate server. The same clients will be deployed to all servers included in the play.  The inventory is structured so that we can use group\_vars to achieve the desired state.&#x20;
 
 The inventory:
 

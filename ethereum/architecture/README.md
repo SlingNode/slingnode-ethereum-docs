@@ -124,12 +124,7 @@ The role creates three user accounts and corresponding groups and one additional
 
 Created users:
 
-| User               | Group                      | Purpose                         |
-| ------------------ | -------------------------- | ------------------------------- |
-| execution\_client  | execution\_client          | Runs execution client container |
-| consensus\_client  | consensus\_client          | Runs consensus client container |
-| validator\_client  | validator\_client          | Runs validator client container |
-|                    | jwt\_secret\_access\_group | Grants access to JWT secret     |
+<table><thead><tr><th width="183">User</th><th width="227.33333333333331">Group</th><th>Purpose</th></tr></thead><tbody><tr><td>execution_client </td><td>execution_client</td><td>Runs execution client container</td></tr><tr><td>consensus_client </td><td>consensus_client</td><td>Runs consensus client container</td></tr><tr><td>validator_client</td><td>validator_client</td><td>Runs validator client container</td></tr><tr><td></td><td>jwt_secret_access_group</td><td>Grants access to JWT secret</td></tr></tbody></table>
 
 execution\_client and consensus\_client users are members of the jwt\_secret\_access\_group.
 

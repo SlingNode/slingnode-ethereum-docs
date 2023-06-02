@@ -28,4 +28,4 @@ geth_metrics_expensive_enabled: true
 
 ## slingnode.ethereum\_observability
 
-SlingNode has developed an [Ansible role that can deploy an Observability stack](https://slingnode.gitbook.io/slingnode.ethereum\_observability/) that seamlessly integrates with nodes deployed using slingnode.ethereum role. The role deploys Prometheus and Grafana with relevant dashboards.&#x20;
+SlingNode has developed an [Ansible role that can deploy an Observability stack](https://slingnode.gitbook.io/slingnode.ethereum\_observability/) that seamlessly integrates with nodes deployed using slingnode.ethereum role. The role deploys Prometheus that will automatically start scraping the metrics.&#x20;
