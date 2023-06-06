@@ -1,6 +1,6 @@
 # Overview
 
-[#configuration](components/elk/#configuration "mention")slingnode.ethereum\_observability is an Ansible role used to deploy a full observability stack that seamlessly integrates with Ethereum nodes deployed by [slingnode.ethereum](https://docs.slingnode.com/slingnode.ethereum/) role. Both roles use the same naming for common variables. This means you can define them once in your Playbook, group\_vars or host\_vars and deploy a full Ethereum node along with the observability stack.&#x20;
+slingnode.ethereum\_observability is an Ansible role used to deploy a full observability stack that seamlessly integrates with Ethereum nodes deployed by [slingnode.ethereum](https://docs.slingnode.com/slingnode.ethereum/) role. Both roles use the same naming for common variables. This means you can define them once in your Playbook, group\_vars or host\_vars and deploy a full Ethereum node along with the observability stack.&#x20;
 
 Out of the box you get a fully functional stack with:
 
