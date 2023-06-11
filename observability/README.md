@@ -28,13 +28,13 @@ SlingNode Observability Stack (SOS) can be deployed on a single server along wit
 
 In a single server deployment (default type), all components ([monitoring server](architecture.md#monitoring-server) and [monitoring agents](architecture.md#monitoring-agents)) are deployed to the same server as the Ethereum clients. In this deployment type, the services communicate over Docker Network as depicted in the diagram below.&#x20;
 
-<figure><img src=".gitbook/assets/slingnode-ethereum-observabiliyt-single.png" alt=""><figcaption><p>Single server deployment</p></figcaption></figure>
+<figure><img src=".gitbook/assets/slingnode-ethereum-node-monitoring-single-server.png" alt=""><figcaption><p>Single server deployment</p></figcaption></figure>
 
 ### Distributed deployment
 
 In a distributed deployment, the [monitoring server](architecture.md#monitoring-server) (Prometheus, ELK, Grafana) is deployed to a dedicated node and configured to monitor Ethereum Clients running on remote servers. The monitoring agents (Filebeat, node-exporter, ethereum-metrics-exporter,  cadvisor) are deployed to the servers where the Ethereum clients are running. The monitoring server and agents communicate over the network as depicted in the diagram below.
 
-<figure><img src=".gitbook/assets/slingnode-ethereum-observabiliyt-distributed.png" alt=""><figcaption><p>Distributed deployment</p></figcaption></figure>
+<figure><img src=".gitbook/assets/slingnode-ethereum-node-monitoring-distributed.png" alt=""><figcaption><p>Distributed deployment</p></figcaption></figure>
 
 ## Customization
 
