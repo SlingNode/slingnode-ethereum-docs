@@ -22,13 +22,13 @@ slingnode.ethereum role supports two types of deployment, a single server deploy
 
 In a single server deployment (default type) all client layers run on a single server and communicate over [Docker Network](architecture/#docker-network) as depicted in the diagram below.
 
-<figure><img src=".gitbook/assets/slingnode-ethereum-clients-diagram-single-server.png" alt=""><figcaption><p>Single server deployment</p></figcaption></figure>
+<figure><img src=".gitbook/assets/slingnode-ethereum-clients-single-server.png" alt=""><figcaption><p>Single server deployment</p></figcaption></figure>
 
 ### Distributed deployment
 
 In a distributed deployment the clients run on separate servers and communicate over the network (LAN) as depicted in the diagram below.&#x20;
 
-<figure><img src=".gitbook/assets/slingnode-ethereum-clients-diagram-distributed.png" alt=""><figcaption><p>Distributed deployment</p></figcaption></figure>
+<figure><img src=".gitbook/assets/slingnode-ethereum-clients-distributed.png.png" alt=""><figcaption><p>Distributed deployment</p></figcaption></figure>
 
 ## Repositories
 
