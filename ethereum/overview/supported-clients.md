@@ -13,6 +13,7 @@ Supported consensus clients:&#x20;
 * Prysm
 * Teku
 * Nimbus (checkpoint sync currently not supported)
+* Lodestar
 
 Supported validator clients:&#x20;
 
@@ -20,6 +21,7 @@ Supported validator clients:&#x20;
 * Prysm
 * Teku
 * Nimbus\*
+* Lodestar
 
 ### Managing validators
 

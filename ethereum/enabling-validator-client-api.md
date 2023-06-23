@@ -4,11 +4,11 @@ slingnode.ethereum role disables validator client API by default. They can be ea
 
 All clients except Teku serve the API over plain text HTTP. Teku is the only client that requires HTTPS for API access. The role generates a self-signed certificate, refer to [Teku validator client API access](enabling-validator-client-api.md#teku-validator-client-api-access) for details.
 
-The API requests are authenticated using a bearer token. All clients except Nimbus auto-generate a token and save it in a client specific location within their data directory - refer to [Bearer token](enabling-validator-client-api.md#bearer-token) section for details.&#x20;
+The API requests are authenticated using a bearer token. All clients except Nimbus auto-generate the token and save it in a client specific location within their data directory - refer to [Bearer token](enabling-validator-client-api.md#bearer-token) section for details.&#x20;
 
 The table below shows summary of the relevant client features:&#x20;
 
-<table><thead><tr><th width="147">Client</th><th width="150" align="center">Protocol</th><th width="225" align="center">Auto-generated token</th><th align="center">ETH2 Key manager API</th></tr></thead><tbody><tr><td>Lighthouse</td><td align="center">HTTP</td><td align="center">yes</td><td align="center">yes</td></tr><tr><td>Prysm</td><td align="center">HTTP</td><td align="center">yes</td><td align="center">yes</td></tr><tr><td>Teku</td><td align="center">HTTPS</td><td align="center">yes</td><td align="center">yes</td></tr><tr><td>Nimbus</td><td align="center">HTTP</td><td align="center">no</td><td align="center">yes</td></tr></tbody></table>
+<table><thead><tr><th width="147">Client</th><th width="150" align="center">Protocol</th><th width="225" align="center">Auto-generated token</th><th align="center">ETH2 Key manager API</th></tr></thead><tbody><tr><td>Lighthouse</td><td align="center">HTTP</td><td align="center">yes</td><td align="center">yes</td></tr><tr><td>Prysm</td><td align="center">HTTP</td><td align="center">yes</td><td align="center">yes</td></tr><tr><td>Teku</td><td align="center">HTTPS</td><td align="center">yes</td><td align="center">yes</td></tr><tr><td>Nimbus</td><td align="center">HTTP</td><td align="center">no</td><td align="center">yes</td></tr><tr><td>Lodestar</td><td align="center">HTTP</td><td align="center">yes</td><td align="center">yes</td></tr></tbody></table>
 
 Since the APIs are served over plain text HTTP protocol (except Teku) it is recommended to use either a reverse proxy (such as Nginx) with TLS or SSH tunneling to enable access from remote hosts. Refer to [Exposing the validator API port to host](enabling-validator-client-api.md#exposing-the-validator-api-port-to-host) for details.&#x20;
 
@@ -21,6 +21,8 @@ validator_api_enabled: true
 ```
 
 This will enable the validator API and expose the default port (TCP 7500) to the Docker network - meaning the API will be accessible only from other containers connected to the same network.&#x20;
+
+Note Lodestar is an exception and uses a different variable, refer to Lodestar section below for details.&#x20;
 
 ### Exposing the validator API port to host
 
@@ -72,7 +74,7 @@ validator_api_port: 7500
 
 All clients except Nimbus auto-generate the token and save it in a client specific location. The table below summarizes the Docker host location of the token for each client:
 
-<table><thead><tr><th width="151">Client</th><th>Token location on Docker host</th></tr></thead><tbody><tr><td>Lighthouse</td><td>{{ blockchain_root_path }}/validator/lighthouse/validators/api-token.txt</td></tr><tr><td>Prysm</td><td>{{ blockchain_root_path }}/validator/prysm/auth-token</td></tr><tr><td>Teku</td><td>{{ blockchain_root_path }}/validator/teku/validator/key-manager/validator-api-bearer</td></tr><tr><td>Nimbus</td><td>{{ blockchain_root_path }}/validator/nimbus/api-token.txt</td></tr></tbody></table>
+<table><thead><tr><th width="151">Client</th><th>Token location on Docker host</th></tr></thead><tbody><tr><td>Lighthouse</td><td>{{ blockchain_root_path }}/validator/lighthouse/validators/api-token.txt</td></tr><tr><td>Prysm</td><td>{{ blockchain_root_path }}/validator/prysm/auth-token</td></tr><tr><td>Teku</td><td>{{ blockchain_root_path }}/validator/teku/validator/key-manager/validator-api-bearer</td></tr><tr><td>Nimbus</td><td>{{ blockchain_root_path }}/validator/nimbus/api-token.txt</td></tr><tr><td>Lodestar</td><td>{{ blockchain_root_path }}/validator/lodestar/validator-db/api-token.txt</td></tr></tbody></table>
 
 ### Nimbus bearer token
 
@@ -131,6 +133,14 @@ teku_restart_validator_container: true
 This tells the role to create new a certificate and restart the validator container.&#x20;
 
 NOTE: you need to remove the above variables from your playbook otherwise the certificate will be generated and the container restarted every time the role runs.&#x20;
+
+## Lodestar
+
+Validator APIs are disabled by default for all clients except Lodestar. Lodestar cannot be started with the Validator API (key manager APIs) disabled when there's no existing keystore - meaning that in order to start it with the APIs disabled the keystore would have to be imported using CLI beforehand. To workaround this the role starts Lodestar Validator with the APIs enabled. Lodestar uses a different variable than the other clients to control if the APIs are enabled.&#x20;
+
+```yaml
+lodestar_validator_api_enabled: true
+```
 
 ## Client documentation
 
