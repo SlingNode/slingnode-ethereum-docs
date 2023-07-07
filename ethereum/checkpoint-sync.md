@@ -21,7 +21,7 @@ consensus_checkpoint_sync_url: https://sync-goerli.beaconcha.in
 
 Technically, all clients support checkpoint sync however when using slingnode.ethereum with Nimbus this is feature is not currently available. This is due to the way Nimbus implements the checkpoint sync (it requires starting and restarting the client with different flags which is cumbersome to implement cleanly in Docker and Ansible). The table below shows support matrix and links to the client specific documentation for reference.
 
-<table><thead><tr><th width="153.33333333333331">Client</th><th width="227" align="center">Available using the role</th><th>Official docs</th></tr></thead><tbody><tr><td>Lighthouse</td><td align="center">yes</td><td><a href="https://lighthouse-book.sigmaprime.io/checkpoint-sync.html">https://lighthouse-book.sigmaprime.io/checkpoint-sync.html</a></td></tr><tr><td>Prysm</td><td align="center">yes</td><td><a href="https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync">https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync</a></td></tr><tr><td>Teku</td><td align="center">yes</td><td><a href="https://docs.teku.consensys.net/HowTo/Get-Started/Checkpoint-Start/">https://docs.teku.consensys.net/HowTo/Get-Started/Checkpoint-Start/</a></td></tr><tr><td>Nimbus</td><td align="center">no</td><td><a href="https://nimbus.guide/trusted-node-sync.html">https://nimbus.guide/trusted-node-sync.html</a></td></tr></tbody></table>
+<table><thead><tr><th width="153.33333333333331">Client</th><th width="227" align="center">Available using the role</th><th>Official docs</th></tr></thead><tbody><tr><td>Lighthouse</td><td align="center">yes</td><td><a href="https://lighthouse-book.sigmaprime.io/checkpoint-sync.html">https://lighthouse-book.sigmaprime.io/checkpoint-sync.html</a></td></tr><tr><td>Prysm</td><td align="center">yes</td><td><a href="https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync">https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync</a></td></tr><tr><td>Teku</td><td align="center">yes</td><td><a href="https://docs.teku.consensys.net/HowTo/Get-Started/Checkpoint-Start/">https://docs.teku.consensys.net/HowTo/Get-Started/Checkpoint-Start/</a></td></tr><tr><td>Nimbus</td><td align="center">no</td><td><a href="https://nimbus.guide/trusted-node-sync.html">https://nimbus.guide/trusted-node-sync.html</a></td></tr><tr><td>Lodestar</td><td align="center">yes</td><td><a href="https://chainsafe.github.io/lodestar/usage/beacon-management/#checkpoint-sync">https://chainsafe.github.io/lodestar/usage/beacon-management/#checkpoint-sync</a></td></tr></tbody></table>
 
 ## Public endpoint availability
 
@@ -49,4 +49,15 @@ The exact error message depends on the client.&#x20;
 
 ```
 2023-03-15 11:06:18.011 FATAL - Failed to load initial state from both https://example.com/ and https://example.com/eth/v2/debug/beacon/states/finalized : Invalid SSZ: trying to read more bytes than available
+```
+
+### Lodestar
+
+```
+Jul-07 11:05:26.209[] info: Fetching checkpoint state checkpointSyncUrl=https://example.com
+ ✖ Error: Unable to fetch weak subjectivity state: Not Found:
+    at fetchWeakSubjectivityState (file:///usr/app/packages/cli/src/networks/index.ts:175:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at fetchWSStateFromBeaconApi (file:///usr/app/packages/cli/src/cmds/beacon/initBeaconState.ts:199:35)
+    at Object.beaconHandler [as handler] (file:///usr/app/packages/cli/src/cmds/beacon/handler.ts:66:41)
 ```
